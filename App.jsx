@@ -46,6 +46,7 @@ import React, { useEffect, useState,useRef, useCallback ,useMemo} from "react";
 //    }            
         
 // }
+import SCmp from "./sComponent";
 
  
 function App2(props) {
@@ -53,12 +54,12 @@ function App2(props) {
     const[data,setData]= useState(null);
     const listRef = useRef(null);
 
-  const calc= () => {
-    console.log("Calculation");
-    return "Result of calculation"
-  }
-let result=useMemo(calc,[count]);
-  console.log(result);  
+//   const calc= () => {
+//     console.log("Calculation");
+//     return "Result of calculation"
+//   }
+// let result=useMemo(calc,[count]);
+//   console.log(result);  
     useEffect(() => {    
         // let list =document.getElementById("list")
         
@@ -75,6 +76,7 @@ let result=useMemo(calc,[count]);
        
  return(
     <>
+    <SCmp count={count} />
     <h1>Hello World!{count}</h1>
     <button onClick={() => setCount(count-1)}>-</button>
     <button onClick={() => setCount(count+1)}>+</button>
@@ -87,9 +89,3 @@ let result=useMemo(calc,[count]);
 
 export default App2;
 
-
-function Hcmp({children}) {
-
-    return<div>{children}</div>
-        
-}
